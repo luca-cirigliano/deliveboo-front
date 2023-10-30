@@ -1,8 +1,18 @@
-<script setup>
+<script>
+import HomePage from './components/HomePage.vue';
+import SearchPage from './components/SearchPage.vue';
+export default {
 
+    components: {
+        HomePage,
+        SearchPage,
+    }
+};
 
 </script>
 
-<template></template>
+<template>
+    <router-view></router-view>
+</template>
 
 <style scoped></style>
