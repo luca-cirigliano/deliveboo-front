@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomePage from '../components/HomePage.vue'
-import SearchPage from '../components/SearchPage.vue'
-import AppHome from '../components/AppHome.vue'
+import HomePage from '../views/HomePage.vue'
+import SearchPage from '../views/SearchPage.vue'
+import AppHome from '../views/AppHome.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
