@@ -51,6 +51,11 @@
         <div>{{ restaurant.name }}</div>
         <div>{{ restaurant.address }}</div>
         <div>{{ restaurant.piva }}</div>
+
+        <ul>
+        <li v-for="type in restaurant.types" :key="type.id">{{ type.name }}</li>
+        </ul>
+        
         <div class="img-container">
             <img :src="restaurantImage" alt="">
         </div>

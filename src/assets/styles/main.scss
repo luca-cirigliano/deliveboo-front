@@ -8,3 +8,13 @@ $fa-font-path: '../webfonts';
 
 // @import '@fontsource/montserrat/index.css';
 // @import '@fontsource/montserrat/700.css';
+
+
+.restaurant-type:hover {
+    color: aqua;
+    cursor: pointer;
+}
+
+.active{
+    color: aqua;
+}
