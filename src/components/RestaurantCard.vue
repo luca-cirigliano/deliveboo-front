@@ -46,21 +46,32 @@
 
 <template>
 
-    <div>
-    
-        <div>{{ restaurant.name }}</div>
-        <div>{{ restaurant.address }}</div>
-        <div>{{ restaurant.piva }}</div>
-
-        <ul>
-        <li v-for="type in restaurant.types" :key="type.id">{{ type.name }}</li>
-        </ul>
-        
-        <div class="img-container">
-            <img :src="restaurantImage" alt="">
-        </div>
-
+    <div class="container">
+        <section class="mx-auto my-5" style="max-width: 23rem;">
+            
+            <div class="card card-form mt-2 mb-4">
+            <div class="card-body rounded-top blue">
+                <div class="img-container">
+                    <img :src="restaurantImage" alt="">
+                </div>
+            </div>
+            <div class="card card-form-2 mb-0 z-depth-0">
+                <div class="card-body">
+                <form class="text-center">
+                    <h3><div>{{ restaurant.name }}</div></h3>
+                    <div>{{ restaurant.address }}</div>
+                    
+                        <div v-for="type in restaurant.types" :key="type.id"><i class="fa-solid fa-certificate"></i> {{ type.name }}</div>
+                    
+                </form>
+                </div>
+            </div>
+            </div>
+            
+        </section>
     </div>
+
+
 
 </template>
 
@@ -79,5 +90,32 @@
 
 }
 
+body {
+	background-color: #f5f7fa;
+}
+
+.blue {
+  background-color: #02ccbc;
+}
+
+i{
+    color: #02ccbc;
+} 
+
+.card-form .form-check {
+  margin-left: .32rem;
+}
+
+.card-form .card-form-2 {
+  -webkit-border-top-left-radius: 21px;
+  border-top-left-radius: 21px;
+  -webkit-border-top-right-radius: 21px;
+  border-top-right-radius: 21px;
+  margin-top: -35px;
+}
+
+ul {
+    list-style-type: none;
+}
 
 </style>
