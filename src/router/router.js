@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../views/HomePage.vue'
-import SearchPage from '../views/SearchPage.vue'
+import RestaurantShow from '../views/RestaurantShow.vue'
 import AppHome from '../views/AppHome.vue'
 
 const router = createRouter({
@@ -20,11 +20,11 @@ const router = createRouter({
       }
     },
     {
-      name: 'search',
-      path: '/search',
-      component: SearchPage,
+      name: 'RestaurantShow',
+      path: '/restaurants/:slug',
+      component: RestaurantShow,
       meta: {
-        title: "Search"
+        title: "RestaurantShow"
       }
     }
   ]

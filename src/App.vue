@@ -1,11 +1,11 @@
 <script>
 import HomePage from './views/HomePage.vue';
-import SearchPage from './views/SearchPage.vue';
+import RestaurantShow from './views/RestaurantShow.vue';
 export default {
 
     components: {
         HomePage,
-        SearchPage,
+        RestaurantShow,
     }
 };
 

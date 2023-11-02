@@ -18,7 +18,7 @@ export default {
             return this.restaurants;
             } else {
             return this.restaurants.filter(restaurant => {
-                return this.filters.every(filter => restaurant.types.some(type => type.name === filter));
+                return this.filters.every(filter => restaurant.types.some(typology => typology.name === filter));
             });
             }
         },
@@ -55,9 +55,9 @@ export default {
         getUniqueTypes() {
             const types = [];
             this.restaurants.forEach(restaurant => {
-            restaurant.types.forEach(type => {
-                if (!types.includes(type.name)) {
-                types.push(type.name);
+            restaurant.types.forEach(typology => {
+                if (!types.includes(typology.name)) {
+                types.push(typology.name);
                 }
             });
             });
