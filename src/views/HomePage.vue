@@ -91,23 +91,23 @@ export default {
                 <p>Pizzeria</p>
             </div>
             <div class="text-center">
-                <i class="fa-solid fa-bread-slice restaurant-type" @click="toggleFilter('Piadineria')" :class="{ active: filters.includes('type') }"></i>
+                <i class="fa-solid fa-bread-slice restaurant-type" @click="toggleFilter('Piadineria')" :class="{ active: filters.includes('Piadineria') }"></i>
                 <p>Piadineria</p>
             </div>
             <div class="text-center">
-                <i class="fa-solid fa-ice-cream restaurant-type" @click="toggleFilter('Gelateria')" :class="{ active: filters.includes('Gelateria ') }"></i>
+                <i class="fa-solid fa-ice-cream restaurant-type" @click="toggleFilter('Gelateria')" :class="{ active: filters.includes('Gelateria') }"></i>
                 <p>Gelateria</p>
             </div>
             <div class="text-center">
-                <i class="fa-solid fa-cookie restaurant-type" @click="toggleFilter('Cornetteria')" :class="{ active: filters.includes('Cornetteria ') }"></i>
+                <i class="fa-solid fa-cookie restaurant-type" @click="toggleFilter('Cornetteria')" :class="{ active: filters.includes('Cornetteria') }"></i>
                 <p>Cornetteria</p>
             </div>
             <div class="text-center">
-                <i class="fa-solid fa-drumstick-bite restaurant-type" @click="toggleFilter('Kebab')" :class="{ active: filters.includes('Kebab ') }"></i>
+                <i class="fa-solid fa-drumstick-bite restaurant-type" @click="toggleFilter('Kebab')" :class="{ active: filters.includes('Kebab') }"></i>
                 <p>Kebab</p>
             </div>
             <div class="text-center"    >
-                <i class="fa-solid fa-bowl-food restaurant-type" @click="toggleFilter('Pokeria')" :class="{ active: filters.includes('Pokeria ') }"></i>
+                <i class="fa-solid fa-bowl-food restaurant-type" @click="toggleFilter('Pokeria')" :class="{ active: filters.includes('Pokeria') }"></i>
                 <p>Pokeria</p>
             </div>
         </div>
