@@ -8,6 +8,7 @@ export default {
             baseUrl: 'http://127.0.0.1:8000/',
             restaurants: [],
             filters: [],
+            noResults: false,
         };
     },
 
@@ -49,6 +50,7 @@ export default {
             } else {
                 this.filters.push(filter);
             }
+            this.noResults = this.filteredRestaurants.length === 0;
         },
         getUniqueTypes() {
             const types = [];
@@ -110,6 +112,9 @@ export default {
                 <i class="fa-solid fa-bowl-food restaurant-type" @click="toggleFilter('Pokeria')" :class="{ active: filters.includes('Pokeria') }"></i>
                 <p>Pokeria</p>
             </div>
+        </div>
+        <div v-if="noResults" class="text-center mt-5">
+            <p>Nessun ristorante trovato per i filtri selezionati.</p>
         </div>
 
         <div class="card-container">
