@@ -17,9 +17,21 @@ export default {
 </script>
 
 <template>
-    <AppHeader></AppHeader>
-    <router-view></router-view>
-    <AppFooter></AppFooter>
+    <div class="body">
+        <AppHeader></AppHeader>
+        <router-view></router-view>
+
+        <AppFooter></AppFooter>
+
+
+    </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+</style>
