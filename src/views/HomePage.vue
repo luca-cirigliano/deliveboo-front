@@ -9,6 +9,7 @@ export default {
             restaurants: [],
             filters: [],
             noResults: false,
+            
         };
     },
 
@@ -25,6 +26,7 @@ export default {
     },  
 
     methods: {
+        
         getRestaurants() {
             axios.get(this.baseUrl + 'api/restaurants/').then(res => {
                 this.restaurants = res.data.results;
@@ -123,7 +125,21 @@ export default {
                 <RestaurantCard :restaurant="restaurant"></RestaurantCard>
             </div>
 
+           
+
+
+         
+
+            
+
+
+
         </div>
+
+        
+
+
+
 
 
     </section>
