@@ -75,10 +75,9 @@ export default {
 
 </script>
 <template>
-    <section>
-
-        <div>HomePage</div>
-
+    <section class="bg-svg">
+        <h1 class="text-center pt-5">Cosa vuoi mangiare oggi?</h1>
+        <h5 class="text-center mt-5">clicca su quello che più ti ispira e ti consiglieremo noi i migliori locali!</h5>
         <div class="d-flex gap-5 justify-content-center mt-5">
             <div class="text-center">
                 <i class="fa-solid fa-burger restaurant-type" @click="toggleFilter('Hamburgeria')" :class="{ active: filters.includes('Hamburgeria') }"></i>
@@ -119,7 +118,7 @@ export default {
 
         <div class="card-container">
 
-            <div v-for="restaurant in filteredRestaurants" :key="restaurant.id">
+            <div class="card-widht" v-for="restaurant in filteredRestaurants" :key="restaurant.id">
                 <RestaurantCard :restaurant="restaurant"></RestaurantCard>
             </div>
 
@@ -133,10 +132,21 @@ export default {
 
 
     .card-container{
-        margin-top: 100px;
+        width: 80%;
+        margin: 100px auto;
         display: flex;
-        gap: 20px;
+        flex-wrap: wrap;
+        gap: 50px;
     }
 
+    .card-widht{
+        width: calc((100% / 5) - 40px);
+    }
+
+    .bg-svg{
+        background-image: url(../../public/img/Animated\ Shape.svg);
+        background-size: cover;
+        min-width: 100%;
+    }
 
 </style>
