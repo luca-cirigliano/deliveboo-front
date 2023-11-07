@@ -1,7 +1,29 @@
 <script>
+import {store} from "../store.js";
+
 
 export default {
-    name: "AppHome"
+    name: "AppHome",
+    data(){
+        return{
+            store,
+        }
+    },
+
+    methods : {
+
+        setCartShow(){
+
+            this.store.CartShow = 0
+            },
+
+    },
+
+    created(){
+
+        this.setCartShow();
+
+    }
 }
 </script>
 

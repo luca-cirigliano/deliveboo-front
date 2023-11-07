@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios';
 import RestaurantCard from '../components/RestaurantCard.vue';
+import {store} from "../store.js";
 
 export default {
     data() {
@@ -9,6 +10,7 @@ export default {
             restaurants: [],
             filters: [],
             noResults: false,
+            store,
             
         };
     },
@@ -26,6 +28,12 @@ export default {
     },  
 
     methods: {
+
+        setCartShow(){
+
+            this.store.CartShow = 0
+            },
+
         
         getRestaurants() {
             axios.get(this.baseUrl + 'api/restaurants/').then(res => {
@@ -69,6 +77,8 @@ export default {
 
     created() {
         this.getRestaurants();
+        console.log(this.store.CartShow);
+        this.setCartShow();
     },
     
     components: { RestaurantCard }

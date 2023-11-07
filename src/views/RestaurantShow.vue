@@ -1,5 +1,8 @@
 <script>
 import axios from 'axios';
+import {store} from "../store.js"
+
+
 export default {
     name: "RestaurantShow",
 
@@ -12,6 +15,7 @@ export default {
         cart : [],
         showMenu : false,
         TotalPrice : 0,
+        store,
 
         }
     },
@@ -20,9 +24,15 @@ export default {
         
         this.restaurantSlug = this.$route.params.slug;
         this.getRestaurant();
+        
     },
 
     methods: {
+
+        setCartShow(){
+
+            this.store.CartShow = 1
+        },
 
         showOffcanvasMenu(){
             this.showMenu ? this.showMenu = false : this.showMenu = true;
@@ -32,9 +42,13 @@ export default {
             axios.get(this.baseUrl + 'api/restaurants/' + this.restaurantSlug).then(res => {
                
                 this.restaurant = res.data.results;
+              
                 
             });
         },
+
+
+       
 
         AddItemToCart(dish){
 
@@ -58,10 +72,22 @@ export default {
 
         }
     },
+
+    created(){
+
+        this.setCartShow();
+
+    }
 }
 </script>
 
 <template>
+
+    <div>
+        <button class="btn btn-primary" @click.prevent="showOffcanvasMenu()" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="fa-solid fa-cart-shopping"></i></button>
+    </div>
+
+
     <h1 class="text-center">{{ restaurant.name }}</h1>
 
     <div>{{ cart.length }} piatti nel tuo carrello</div>
@@ -98,9 +124,9 @@ export default {
     <!-- prova offcanvas -->
 
 
-    <button class="btn btn-primary" @click.prevent="showOffcanvasMenu()" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
+    
 
-        <div class="offcanvas offcanvas-end" :class="showMenu ? 'show' : ''" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas offcanvas-end" :class="showMenu ? 'show' : ''" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
             <button type="button" class="btn-close" @click.prevent="showOffcanvasMenu()" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -118,4 +144,6 @@ export default {
 
 
     <!-- /prova offancavas -->
+
+
 </template>
