@@ -1,5 +1,5 @@
 <script>
-import {store} from "../store.js"
+
 
 
 export default {
@@ -8,19 +8,14 @@ export default {
     data(){
         return{
 
-            store,
-            showMenu : false,
+           
+           
            
         }
         
     },
 
-    methods : {
-
-        showOffcanvasMenu(){
-            this.showMenu ? this.showMenu = false : this.showMenu = true;
-        },
-    }
+   
 };
 </script>
 <template>

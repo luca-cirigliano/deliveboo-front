@@ -46,9 +46,10 @@
 
 <template>
 
+
     <div class="container">
         <section class="mx-auto my-5" style="max-width: 23rem;">
-            
+
             <div class="card card-form mt-2 mb-4">
                 <div class="card-body rounded-top blue">
                     <div class="img-container">
@@ -59,10 +60,10 @@
                 <div class="card-body">
                     <div class="text-center">
                         <h3><div>{{ restaurant.name }}</div></h3>
-                        <div>{{ restaurant.address }}</div>  
+                        <div>{{ restaurant.address }}</div>
                             <div v-for="typology in restaurant.types" :key="typology.id">
                                 <i class="fa-solid fa-certificate"></i> {{ typology.name }}
-                            </div>  
+                            </div>
                         </div>
                     </div>
                     <router-link
@@ -74,9 +75,10 @@
                         Mostra dettagli
                     </router-link>
                 </div>
-            </div>  
+            </div>
         </section>
     </div>
+
 
 
 
