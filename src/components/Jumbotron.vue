@@ -58,7 +58,7 @@ body {
 }
 
 #myBtn:hover {
-  background: #ddd;
+  background: orange;
   color: black;
 }
 </style>
