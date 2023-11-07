@@ -14,7 +14,7 @@ export default {
 .background {
     margin-top: auto;
     background-color: grey;
-
+    z-index: 1;
 
 }
 

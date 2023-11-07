@@ -22,6 +22,7 @@ export default {
 <style scoped>
 .background {
     background-color: orange;
+    z-index: 1;
 }
 
 .container {
