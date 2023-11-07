@@ -1,7 +1,15 @@
 <script>
 
+
+
 export default {
-    name: "AppHome"
+    name: "AppHome",
+    data(){
+        return{
+           
+        }
+    },
+
 }
 </script>
 
