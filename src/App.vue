@@ -2,7 +2,7 @@
 import HomePage from './views/HomePage.vue';
 import RestaurantShow from './views/RestaurantShow.vue';
 import AppHeader from './components/AppHeader.vue';
-import AppFooter from './components/AppFooter.vue'
+import AppFooter from './components/AppFooter.vue';
 export default {
 
     components: {

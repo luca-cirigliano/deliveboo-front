@@ -13,9 +13,11 @@ export default {
         restaurant: {},
         restaurantSlug: '',
         cart : [],
+       
         showMenu : false,
         TotalPrice : 0,
         store,
+        results : [],
 
         }
     },
@@ -24,6 +26,7 @@ export default {
         
         this.restaurantSlug = this.$route.params.slug;
         this.getRestaurant();
+      
         
     },
 
@@ -47,13 +50,19 @@ export default {
             });
         },
 
-
        
 
         AddItemToCart(dish){
 
             this.cart.push(dish);
-            console.log(this.cart)
+            this.results = [...this.cart.reduce( (mp, o) => {
+            const key = JSON.stringify([o.name, o.description, o.price]);
+                if (!mp.has(key)) mp.set(key, { ...o, count: 0 });
+                mp.get(key).count++;
+                return mp;
+            }, new Map).values()];
+
+           
         },
 
         CalculateTotalPrice(cart){
@@ -72,6 +81,17 @@ export default {
 
         }
     },
+
+    // computed: {
+    // // a computed getter
+    //     productSubtotals: function () {
+    //     var subtotals = {};
+    //     for (var i = 0; i < this.cart.length; i++) {
+    //         subtotals [this.cart[i]] = 1 + (subtotals[this.cart[i]] || 0);
+    //     }
+    //     return subtotals; //A list of product/count pairs may be a more appropriate data structure
+    //     }
+    // },
 
     created(){
 
@@ -134,15 +154,28 @@ export default {
             <button type="button" class="btn-close" @click.prevent="showOffcanvasMenu()" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <div v-for="cartElement in cart">
-                <div>{{ cartElement.name }}</div>
-                <div>{{ cartElement.price }}</div>
+             <div v-for="cartElement in results"  class="d-flex justify-content-between">
                 
-            </div>
+                  <div>
 
-            <div>Total price =  &euro; {{TotalPrice }} </div>
+                    <div>{{ cartElement.name }}</div>
+                    <div>{{ cartElement.price }}</div>
+
+                </div>
+
+                <div>
+                   Quantità : {{ cartElement.count }}
+                </div>
+                <div>
+                    Elimina
+                </div>  
+                
+                
+            </div> 
+
+            <div>Total price =  &euro; {{ TotalPrice }} </div>
         </div>
-        </div>
+    </div>
 
 
     <!-- /prova offancavas -->
