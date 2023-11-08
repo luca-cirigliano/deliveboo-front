@@ -13,19 +13,18 @@ export default {
         restaurant: {},
         restaurantSlug: '',
         cart : [],
-       
         showMenu : false,
         TotalPrice : 0,
         store,
-        results : [],
+        finalCart : [],
+       
 
         }
     },
 
     mounted() {
         
-        this.restaurantSlug = this.$route.params.slug;
-        this.getRestaurant();
+        
       
         
     },
@@ -43,8 +42,12 @@ export default {
 
         getRestaurant() {
             axios.get(this.baseUrl + 'api/restaurants/' + this.restaurantSlug).then(res => {
-               
+                
                 this.restaurant = res.data.results;
+
+             
+
+                
               
                 
             });
@@ -55,14 +58,15 @@ export default {
         AddItemToCart(dish){
 
             this.cart.push(dish);
-            this.results = [...this.cart.reduce( (mp, o) => {
+            this.finalCart = [...this.cart.reduce( (mp, o) => {
             const key = JSON.stringify([o.name, o.description, o.price]);
                 if (!mp.has(key)) mp.set(key, { ...o, count: 0 });
                 mp.get(key).count++;
                 return mp;
             }, new Map).values()];
+            
 
-           
+          
         },
 
         CalculateTotalPrice(cart){
@@ -82,20 +86,21 @@ export default {
         }
     },
 
-    // computed: {
-    // // a computed getter
-    //     productSubtotals: function () {
-    //     var subtotals = {};
-    //     for (var i = 0; i < this.cart.length; i++) {
-    //         subtotals [this.cart[i]] = 1 + (subtotals[this.cart[i]] || 0);
-    //     }
-    //     return subtotals; //A list of product/count pairs may be a more appropriate data structure
-    //     }
-    // },
-
     created(){
 
+        this.restaurantSlug = this.$route.params.slug;
+        
+        this.getRestaurant();
+        
         this.setCartShow();
+       
+       
+        
+       
+        
+        
+        
+       
 
     }
 }
@@ -105,7 +110,7 @@ export default {
 
     
 
-    <button type="button" class="m-3 btn btn-primary position-absolute top-0 end-0" @click.prevent="showOffcanvasMenu()" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+    <button type="button" class="m-3 btn btn-primary position-absolute top-0 end-0 z-2" @click.prevent="showOffcanvasMenu()" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
         <i class="fa-solid fa-cart-shopping"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{{ cart.length }} <span class="visually-hidden">unread messages</span></span>
     </button>
 
@@ -154,21 +159,21 @@ export default {
             <button type="button" class="btn-close" @click.prevent="showOffcanvasMenu()" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <div v-for="cartElement in results">
-                <div>{{ cartElement.name }}</div>
-                <div>{{ cartElement.price }}</div>
+            <div v-for="CartElement in finalCart" class="d-flex justify-content-between">
+                <div>{{ CartElement.name }}</div>
                 
+                
+                <div>
+                    Quantità : {{ CartElement.count }}
+                </div> 
+                <div>
+                    Elimina
+                </div>  
             </div>
 
-            <div>
-                Quantità : {{ cartElement.count }}
-            </div>
-            <div>
-                Elimina
-            </div>  
         </div> 
             <div>Total price =  &euro; {{ TotalPrice }} </div>
-    </div>
+    </div>  
 
                 
                 
