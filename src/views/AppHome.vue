@@ -1,6 +1,5 @@
 <script>
-
-
+import Jumbotron from '../components/Jumbotron.vue';
 
 export default {
     name: "AppHome",
@@ -9,7 +8,7 @@ export default {
            
         }
     },
-
+    components: { Jumbotron },
 }
 </script>
 
@@ -18,7 +17,7 @@ export default {
 <template>
     <section>
         <div><router-link to="Show">Show</router-link></div>
-        <router-link to="home">home</router-link>
+        <Jumbotron></Jumbotron>
     </section>
 </template>
 

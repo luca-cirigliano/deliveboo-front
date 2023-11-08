@@ -134,7 +134,7 @@ export default {
             <button type="button" class="btn-close" @click.prevent="showOffcanvasMenu()" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <div v-for="cartElement in cart">
+            <div v-for="(cartElement, index) in cart" :key="index"></div>
                 <div>{{ cartElement.name }}</div>
                 <div>{{ cartElement.price }}</div>
                 
