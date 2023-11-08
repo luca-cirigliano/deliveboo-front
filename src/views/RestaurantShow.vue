@@ -160,19 +160,19 @@ export default {
                 
             </div>
 
-                <div>
-                   Quantità : {{ cartElement.count }}
-                </div>
-                <div>
-                    Elimina
-                </div>  
-                
-                
-            </div> 
-
+            <div>
+                Quantità : {{ cartElement.count }}
+            </div>
+            <div>
+                Elimina
+            </div>  
+        </div> 
             <div>Total price =  &euro; {{ TotalPrice }} </div>
-        </div>
     </div>
+
+                
+                
+    
 
 
     <!-- /prova offancavas -->
