@@ -2,8 +2,13 @@
 import Jumbotron from '../components/Jumbotron.vue';
 
 export default {
-  components: { Jumbotron },
-    name: "AppHome"
+    name: "AppHome",
+    data(){
+        return{
+           
+        }
+    },
+    components: { Jumbotron },
 }
 </script>
 
