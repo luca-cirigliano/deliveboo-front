@@ -154,14 +154,11 @@ export default {
             <button type="button" class="btn-close" @click.prevent="showOffcanvasMenu()" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-             <div v-for="cartElement in results"  class="d-flex justify-content-between">
+            <div v-for="cartElement in results">
+                <div>{{ cartElement.name }}</div>
+                <div>{{ cartElement.price }}</div>
                 
-                  <div>
-
-                    <div>{{ cartElement.name }}</div>
-                    <div>{{ cartElement.price }}</div>
-
-                </div>
+            </div>
 
                 <div>
                    Quantità : {{ cartElement.count }}
