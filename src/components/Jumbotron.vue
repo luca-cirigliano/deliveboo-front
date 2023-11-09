@@ -2,7 +2,7 @@
     
   <div class="jumbotron jumbotron-fluid">
     <video autoplay muted loop id="myVideo">
-        <source src="../../public/img/burger.mp4" type="video/mp4">
+        <source src="/img/burger.mp4" type="video/mp4">
     </video>
 
     <div class="content">

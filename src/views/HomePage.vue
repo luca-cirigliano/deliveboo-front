@@ -170,7 +170,7 @@ export default {
     }
 
     .bg-svg{
-        background-image: url(../../public/img/Animated\ Shape.svg);
+        background-image: url(img/Animated\ Shape.svg);
         background-size: cover;
         min-width: 100%;
     }
