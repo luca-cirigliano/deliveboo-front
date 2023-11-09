@@ -21,7 +21,7 @@ export default {
 
         }
     },
-
+    
     mounted() {
         
         
@@ -170,7 +170,19 @@ export default {
                     Elimina
                 </div>  
             </div>
-
+            <div>
+                <button>
+                    <router-link
+                        :to="{
+                        name: 'payment',
+                        params: { TotalPrice: this.TotalPrice  }
+                        }"
+                        class="text-center text-decoration-none">
+                            Check out
+                    </router-link>
+                </button>
+                
+            </div>
         </div> 
             <div>Total price =  &euro; {{ TotalPrice }} </div>
     </div>  

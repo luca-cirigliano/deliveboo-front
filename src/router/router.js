@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../views/HomePage.vue'
 import RestaurantShow from '../views/RestaurantShow.vue'
 import AppHome from '../views/AppHome.vue'
+import payment from '../views/payment.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,6 +26,14 @@ const router = createRouter({
       component: RestaurantShow,
       meta: {
         title: "RestaurantShow"
+      }
+    },
+    {
+      name: 'payment',
+      path: '/payment/:TotalPrice',
+      component: payment,
+      meta: {
+        title: "payment"
       }
     }
   ]
