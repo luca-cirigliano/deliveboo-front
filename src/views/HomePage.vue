@@ -87,7 +87,7 @@ export default {
 
 </script>
 <template>
-    <section class="bg-svg">
+    <section class="bg-svg text-light">
         <h1 class="text-center pt-5">Cosa vuoi mangiare oggi?</h1>
         <h5 class="text-center mt-5">clicca su quello che più ti ispira e ti consiglieremo noi i migliori locali!</h5>
         <div class="d-flex gap-5 justify-content-center mt-5">
