@@ -19,6 +19,7 @@ export default {
         <!-- <div><router-link to="Show">Show</router-link></div> -->
         <Jumbotron></Jumbotron>
     </section>
+    banana
 </template>
 
 <style scoped lang="scss">
