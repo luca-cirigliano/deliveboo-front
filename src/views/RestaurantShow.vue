@@ -123,7 +123,26 @@ export default {
         
         
             <div v-for="dish in restaurant.dishes" :key="dish.id" class="list-unstyled">
-                <div>
+                <section class="mx-auto my-5" style="max-width: 23rem;">
+                    <div class="card card-form mt-2 mb-4">
+                        <div class="card-body rounded-top blue">
+                            <div class="img-container">
+                                <img :src="baseUrl + 'storage/' + dish.image" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-form-2 min mb-0 z-depth-0">
+                        <div class="card-body" style="max-width: 13rem;">
+                            <div class="text-center">
+                                <h3><div>{{ dish.name }} </div></h3>
+                                <div>{{ dish.description }}</div>
+                                <div>Price: {{ dish.price }}</div> 
+                                <div><button @click="AddItemToCart(dish), CalculateTotalPrice(cart)">Add to cart</button></div>  
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--<div>
                     {{ dish.name }} 
                 </div>
                 <div>
@@ -132,7 +151,7 @@ export default {
                 <div>
                     Price: {{ dish.price }}
                 </div>
-                <div><button @click="AddItemToCart(dish), CalculateTotalPrice(cart)">Add to cart</button></div>
+                <div><button @click="AddItemToCart(dish), CalculateTotalPrice(cart)">Add to cart</button></div>-->
             </div>
         
 
@@ -196,3 +215,52 @@ export default {
 
 
 </template>
+
+<style lang="scss" scoped>
+    .img-container{
+        width: 200px;
+        height: 200px;
+
+        img{
+
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+
+body {
+	background-color: #f5f7fa;
+}
+
+.blue {
+  background-color: #02ccbc;
+}
+
+i{
+    color: #02ccbc;
+} 
+
+.card-form .form-check {
+  margin-left: .32rem;
+}
+
+.card-form .card-form-2 {
+  -webkit-border-top-left-radius: 21px;
+  border-top-left-radius: 21px;
+  -webkit-border-top-right-radius: 21px;
+  border-top-right-radius: 21px;
+  margin-top: -35px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.min{
+    min-height: 200px;
+}
+
+</style>
