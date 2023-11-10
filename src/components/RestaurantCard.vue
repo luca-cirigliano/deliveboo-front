@@ -1,52 +1,50 @@
-    <script>
+<script>
 
-    export default {
-        data(){
+export default {
+    data() {
 
-            return{
+        return {
 
-                baseUrl : 'http://127.0.0.1:8000/',
+            baseUrl: 'http://127.0.0.1:8000/',
 
+        }
+    },
+
+    props: {
+
+        restaurant: Object,
+    },
+
+    computed: {
+
+
+        restaurantImage() {
+
+            if (this.restaurant.photo == null) {
+
+                return 'https://icon-library.com/images/no-image-available-icon/no-image-available-icon-7.jpg'
+
+            } else {
+
+                return this.baseUrl + 'storage/' + this.restaurant.photo;
             }
-        },
-
-        props : {
-
-            restaurant : Object,
-        },
-
-        computed : {
 
 
-            restaurantImage(){
 
-                if(this.restaurant.photo == null){
+        }
+    },
 
-                    return 'https://icon-library.com/images/no-image-available-icon/no-image-available-icon-7.jpg'
+    methods: {
 
-                } else {
-                    
-                    return this.baseUrl + 'storage/' + this.restaurant.photo;
-                }
+    },
 
-                
-
-            }
-        },
-
-        methods: {
-            
-        },
-
-    }   
+}
 
 
-    </script>
+</script>
 
 
 <template>
-
-
     <div class="container">
         <section class="mx-auto my-5" style="max-width: 23rem;">
 
@@ -56,80 +54,77 @@
                         <img :src="restaurantImage" alt="">
                     </div>
                 </div>
-            <div class="card card-form-2 min mb-0 z-depth-0">
-                <div class="card-body">
-                    <div class="text-center">
-                        <h3><div>{{ restaurant.name }}</div></h3>
-                        <div>{{ restaurant.address }}</div>
+                <div class="card card-form-2 min mb-0 z-depth-0">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h3>
+                                <div>{{ restaurant.name }}</div>
+                            </h3>
+                            <div>{{ restaurant.address }}</div>
                             <div v-for="typology in restaurant.types" :key="typology.id">
                                 <i class="fa-solid fa-certificate"></i> {{ typology.name }}
                             </div>
                         </div>
                     </div>
-                    <router-link
-                        :to="{
+                    <router-link :to="{
                         name: 'RestaurantShow',
                         params: { slug: restaurant.slug },
-                        }"
-                    class="text-center text-decoration-none">
+                    }" class="text-center text-decoration-none">
                         Mostra dettagli
                     </router-link>
                 </div>
             </div>
         </section>
     </div>
-
-
-
-
 </template>
 
 
 <style lang="scss" scoped>
-    .img-container{
-        width: 200px;
-        height: 200px;
+.img-container {
+    display: flex;
+    flex-wrap: wrap;
 
-        img{
 
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    img {
 
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 1/1;
     }
+
+}
 
 
 body {
-	background-color: #f5f7fa;
+    background-color: #f5f7fa;
 }
 
 .blue {
-  background-color: #02ccbc;
+    background-color: #02ccbc;
 }
 
-i{
+i {
     color: #02ccbc;
-} 
+}
 
 .card-form .form-check {
-  margin-left: .32rem;
+    margin-left: .32rem;
 }
 
 .card-form .card-form-2 {
-  -webkit-border-top-left-radius: 21px;
-  border-top-left-radius: 21px;
-  -webkit-border-top-right-radius: 21px;
-  border-top-right-radius: 21px;
-  margin-top: -35px;
+    -webkit-border-top-left-radius: 21px;
+    border-top-left-radius: 21px;
+    -webkit-border-top-right-radius: 21px;
+    border-top-right-radius: 21px;
+    margin-top: -35px;
 }
 
 ul {
     list-style-type: none;
 }
 
-.min{
+.min {
     min-height: 200px;
 }
-
 </style>
