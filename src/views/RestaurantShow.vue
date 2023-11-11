@@ -123,35 +123,28 @@ export default {
         
         
             <div v-for="dish in restaurant.dishes" :key="dish.id" class="list-unstyled">
-                <section class="mx-auto my-5" style="max-width: 23rem;">
-                    <div class="card card-form mt-2 mb-4">
-                        <div class="card-body rounded-top blue">
-                            <div class="img-container">
-                                <img :src="baseUrl + 'storage/' + dish.image" alt="">
+                <div class="container">
+                    <section class="mx-auto my-5" style="max-width: 23rem;">
+                        <div class="card card-form mt-2 mb-4">
+                            <div class="card-body rounded-top blue">
+                                <div class="img-container">
+                                    <img :src="baseUrl + 'storage/' + dish.image" alt="">
+                                </div>
+                            </div>
+                        
+                            <div class="card card-form-2 min mb-0 z-depth-0">
+                                <div class="card-body" style="max-width: 13rem;">
+                                    <div class="text-center">
+                                        <h3><div>{{ dish.name }} </div></h3>
+                                        <div>{{ dish.description }}</div>
+                                        <div>Price: {{ dish.price }}</div> 
+                                        <div><button @click="AddItemToCart(dish), CalculateTotalPrice(cart)">Add to cart</button></div>  
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card card-form-2 min mb-0 z-depth-0">
-                        <div class="card-body" style="max-width: 13rem;">
-                            <div class="text-center">
-                                <h3><div>{{ dish.name }} </div></h3>
-                                <div>{{ dish.description }}</div>
-                                <div>Price: {{ dish.price }}</div> 
-                                <div><button @click="AddItemToCart(dish), CalculateTotalPrice(cart)">Add to cart</button></div>  
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!--<div>
-                    {{ dish.name }} 
+                    </section>
                 </div>
-                <div>
-                    {{ dish.description }} 
-                </div>
-                <div>
-                    Price: {{ dish.price }}
-                </div>
-                <div><button @click="AddItemToCart(dish), CalculateTotalPrice(cart)">Add to cart</button></div>-->
             </div>
         
 
@@ -178,7 +171,7 @@ export default {
             <button type="button" class="btn-close" @click.prevent="showOffcanvasMenu()" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <div v-for="CartElement in finalCart" class="d-flex justify-content-between">
+            <div v-for="(CartElement, index) in finalCart" :key="index" class="d-flex justify-content-between">
                 <div>{{ CartElement.name }}</div>
                 
                 
@@ -253,10 +246,6 @@ i{
   -webkit-border-top-right-radius: 21px;
   border-top-right-radius: 21px;
   margin-top: -35px;
-}
-
-ul {
-    list-style-type: none;
 }
 
 .min{
