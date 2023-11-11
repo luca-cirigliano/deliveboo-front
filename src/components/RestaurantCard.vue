@@ -69,8 +69,8 @@ export default {
                     <router-link :to="{
                         name: 'RestaurantShow',
                         params: { slug: restaurant.slug },
-                    }" class="text-center text-decoration-none">
-                        Mostra dettagli
+                    }" class="text-center text-decoration-none btn btn-warning color-orange">
+                        Menù
                     </router-link>
                 </div>
             </div>
@@ -80,6 +80,11 @@ export default {
 
 
 <style lang="scss" scoped>
+
+.color-orange {
+    background-color: orange;
+    border-color: orange;
+}
 .img-container {
     display: flex;
     flex-wrap: wrap;

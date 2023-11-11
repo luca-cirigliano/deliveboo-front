@@ -87,7 +87,7 @@ export default {
 
 </script>
 <template>
-    <section class="bg-svg text-light">
+    <section class="bg-svg text-light vh-100">
         <h1 class="text-center pt-5">Cosa vuoi mangiare oggi?</h1>
         <h5 class="text-center mt-5">clicca su quello che più ti ispira e ti consiglieremo noi i migliori locali!</h5>
         <div class="d-flex gap-5 justify-content-center mt-5">
@@ -125,7 +125,7 @@ export default {
             </div>
         </div>
         <div v-if="noResults" class="text-center mt-5">
-            <p>Nessun ristorante trovato per i filtri selezionati.</p>
+            <h3>Nessun ristorante trovato per i filtri selezionati.</h3>
         </div>
 
         <div class="card-container">
@@ -170,7 +170,7 @@ export default {
     }
 
     .bg-svg{
-        background-image: url(img/Animated\ Shape.svg);
+        background-image: url(https://images.squarespace-cdn.com/content/v1/56a2785c69a91af45e06a188/1537458802629-XRT2ICHSR9679WTGKYBW/Restaurant-TableTop-Overview-Tips.png);
         background-size: cover;
         min-width: 100%;
     }
