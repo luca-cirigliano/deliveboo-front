@@ -88,45 +88,48 @@ export default {
 </script>
 <template>
     <section class="bg-svg text-light vh-100">
-        <h1 class="text-center pt-5">Cosa vuoi mangiare oggi?</h1>
-        <h5 class="text-center mt-5">clicca su quello che più ti ispira e ti consiglieremo noi i migliori locali!</h5>
-        <div class="d-flex gap-5 justify-content-center mt-5">
-            <div class="text-center">
-                <i class="fa-solid fa-burger restaurant-type" @click="toggleFilter('Hamburgeria')" :class="{ active: filters.includes('Hamburgeria') }"></i>
-                <p>Hamburgeria</p>
+        <div class="bg-black-transparent">
+            <h1 class="text-center pt-5">Cosa vuoi mangiare oggi?</h1>
+            <h5 class="text-center mt-5">clicca su quello che più ti ispira e ti consiglieremo noi i migliori locali!</h5>
+            <div class="d-flex gap-5 justify-content-center mt-5">
+                <div class="text-center">
+                    <i class="fa-solid fa-burger restaurant-type" @click="toggleFilter('Hamburgeria')" :class="{ active: filters.includes('Hamburgeria') }"></i>
+                    <p>Hamburgeria</p>
+                </div>
+                <div class="text-center">
+                    <i class="fa-solid fa-bowl-rice restaurant-type" @click="toggleFilter('Sushi')" :class="{ active: filters.includes('Sushi') }"></i>
+                    <p>Sushi</p>
+                </div>
+                <div class="text-center">
+                    <i class="fa-solid fa-pizza-slice restaurant-type" @click="toggleFilter('Pizzeria')" :class="{ active: filters.includes('Pizzeria') }"></i>
+                    <p>Pizzeria</p>
+                </div>
+                <div class="text-center">
+                    <i class="fa-solid fa-bread-slice restaurant-type" @click="toggleFilter('Piadineria')" :class="{ active: filters.includes('Piadineria') }"></i>
+                    <p>Piadineria</p>
+                </div>
+                <div class="text-center">
+                    <i class="fa-solid fa-ice-cream restaurant-type" @click="toggleFilter('Gelateria')" :class="{ active: filters.includes('Gelateria') }"></i>
+                    <p>Gelateria</p>
+                </div>
+                <div class="text-center">
+                    <i class="fa-solid fa-cookie restaurant-type" @click="toggleFilter('Cornetteria')" :class="{ active: filters.includes('Cornetteria') }"></i>
+                    <p>Cornetteria</p>
+                </div>
+                <div class="text-center">
+                    <i class="fa-solid fa-drumstick-bite restaurant-type" @click="toggleFilter('Kebab')" :class="{ active: filters.includes('Kebab') }"></i>
+                    <p>Kebab</p>
+                </div>
+                <div class="text-center"    >
+                    <i class="fa-solid fa-bowl-food restaurant-type" @click="toggleFilter('Pokeria')" :class="{ active: filters.includes('Pokeria') }"></i>
+                    <p>Pokeria</p>
+                </div>
             </div>
-            <div class="text-center">
-                <i class="fa-solid fa-bowl-rice restaurant-type" @click="toggleFilter('Sushi')" :class="{ active: filters.includes('Sushi') }"></i>
-                <p>Sushi</p>
-            </div>
-            <div class="text-center">
-                <i class="fa-solid fa-pizza-slice restaurant-type" @click="toggleFilter('Pizzeria')" :class="{ active: filters.includes('Pizzeria') }"></i>
-                <p>Pizzeria</p>
-            </div>
-            <div class="text-center">
-                <i class="fa-solid fa-bread-slice restaurant-type" @click="toggleFilter('Piadineria')" :class="{ active: filters.includes('Piadineria') }"></i>
-                <p>Piadineria</p>
-            </div>
-            <div class="text-center">
-                <i class="fa-solid fa-ice-cream restaurant-type" @click="toggleFilter('Gelateria')" :class="{ active: filters.includes('Gelateria') }"></i>
-                <p>Gelateria</p>
-            </div>
-            <div class="text-center">
-                <i class="fa-solid fa-cookie restaurant-type" @click="toggleFilter('Cornetteria')" :class="{ active: filters.includes('Cornetteria') }"></i>
-                <p>Cornetteria</p>
-            </div>
-            <div class="text-center">
-                <i class="fa-solid fa-drumstick-bite restaurant-type" @click="toggleFilter('Kebab')" :class="{ active: filters.includes('Kebab') }"></i>
-                <p>Kebab</p>
-            </div>
-            <div class="text-center"    >
-                <i class="fa-solid fa-bowl-food restaurant-type" @click="toggleFilter('Pokeria')" :class="{ active: filters.includes('Pokeria') }"></i>
-                <p>Pokeria</p>
-            </div>
-        </div>
-        <div v-if="noResults" class="text-center mt-5">
+            <div v-if="noResults" class="text-center my-5 pb-4">
             <h3>Nessun ristorante trovato per i filtri selezionati.</h3>
+            </div>
         </div>
+       
 
         <div class="card-container">
 
@@ -173,6 +176,10 @@ export default {
         background-image: url(https://images.squarespace-cdn.com/content/v1/56a2785c69a91af45e06a188/1537458802629-XRT2ICHSR9679WTGKYBW/Restaurant-TableTop-Overview-Tips.png);
         background-size: cover;
         min-width: 100%;
+    }
+
+    .bg-black-transparent {
+        background-color: rgba(0, 0, 0, 0.568);
     }
 
 </style>

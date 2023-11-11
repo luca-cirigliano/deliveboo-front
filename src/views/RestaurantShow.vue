@@ -115,7 +115,7 @@ export default {
         </button>
 
 
-        <h1 class="text-center text-white">{{ restaurant.name }}</h1>
+        <h1 class="text-center text-white my-5">{{ restaurant.name }}</h1>
 
         <div class="text-white">{{ cart.length }} piatti nel tuo carrello</div>
 
@@ -233,7 +233,7 @@ body {
 }
 
 .blue {
-  background-color: #02ccbc;
+  background-color: #dc5700;
 }
 
 i{

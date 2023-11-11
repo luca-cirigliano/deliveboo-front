@@ -106,7 +106,7 @@ body {
 }
 
 .blue {
-    background-color: #02ccbc;
+    background-color: #dc5700;
 }
 
 i {
