@@ -30,7 +30,7 @@ const router = createRouter({
     },
     {
       name: 'payment',
-      path: '/payment/:TotalPrice',
+      path: '/payment/:finalCart*/:TotalPrice',
       component: payment,
       meta: {
         title: "payment"
@@ -40,3 +40,4 @@ const router = createRouter({
 })
 
 export default router
+

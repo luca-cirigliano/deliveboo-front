@@ -60,8 +60,8 @@ export default {
             this.cart.push(dish);
             this.finalCart = [...this.cart.reduce( (mp, o) => {
             const key = JSON.stringify([o.name, o.description, o.price]);
-                if (!mp.has(key)) mp.set(key, { ...o, count: 0 });
-                mp.get(key).count++;
+                if (!mp.has(key)) mp.set(key, { ...o, quantity: 0 });
+                mp.get(key).quantity++;
                 return mp;
             }, new Map).values()];
             
@@ -176,7 +176,7 @@ export default {
                 
                 
                 <div>
-                    Quantità : {{ CartElement.count }}
+                    Quantità : {{ CartElement.quantity }}
                 </div> 
                 <div>
                     Elimina
@@ -187,7 +187,8 @@ export default {
                     <router-link
                         :to="{
                         name: 'payment',
-                        params: { TotalPrice: this.TotalPrice  }
+                        params: { TotalPrice: this.TotalPrice},
+                        query : { finalCart : JSON.stringify(this.finalCart)}
                         }"
                         class="text-center text-decoration-none">
                             Check out
