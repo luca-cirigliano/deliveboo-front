@@ -90,7 +90,7 @@ export default {
     <section class="bg-svg text-light vh-100">
         <div class="bg-black-transparent">
             <h1 class="text-center pt-5">Cosa vuoi mangiare oggi?</h1>
-            <h5 class="text-center mt-5">clicca su quello che più ti ispira e ti consiglieremo noi i migliori locali!</h5>
+            <h5 class="text-center mt-5">clicca su quello che più ti aggrada e ti consiglieremo noi i migliori locali!</h5>
             <div class="d-flex gap-5 justify-content-center mt-5">
                 <div class="text-center">
                     <i class="fa-solid fa-burger restaurant-type" @click="toggleFilter('Hamburgeria')" :class="{ active: filters.includes('Hamburgeria') }"></i>
